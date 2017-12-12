@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web Terminal</title>
+    <link rel="stylesheet" href="/static/plugins/xterm.js/xterm.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+
+</head>
+<body>
+
+<div id="term"></div>
+</body>
+
+<script src="/static/plugins/jQuery/jquery-3.2.1.min.js"></script>
+<script src="/static/plugins/jQuery/jquery.cookie.js"></script>
+<script src="/static/plugins/xterm.js/xterm.js"></script>
+<script src="/static/js/ws.js"></script>
+<script src="/static/js/common.js"></script>
+
+<script>
+    $(function connect() {
+        var options = {
+            host: $.cookie('ip'),
+            port: '22',
+            username: $.cookie('account')
+        };
+        openTerminal(options);
+    }());
+</script>
+
+</html>
